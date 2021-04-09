@@ -148,13 +148,7 @@ def decode_pixel_data(arr, ds):
         'YBR_FULL_422' : 0,
     }
 
-    if 'PhotometricInterpretation' not in ds:
-        raise ValueError(
-            "The (0028,0004) Photometric Interpretation element is missing "
-            "from the dataset"
-        )
-
-    photometric_interp = ds.PhotometricInterpretation
+    photometric_interp = ds
 
     try:
         transform = colours[photometric_interp]
